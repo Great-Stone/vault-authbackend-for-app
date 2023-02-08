@@ -93,3 +93,5 @@ You can activate a specific Auth Method of Vault and check authentication throug
   Http Server Running on
   http://127.0.0.1:8080
   ```
+
+  ![](./sample-page.png)
