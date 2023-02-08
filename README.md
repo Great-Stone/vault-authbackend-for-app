@@ -1,5 +1,7 @@
 # Vault Auth Backend Test
 
+[![Video Label](http://img.youtube.com/vi/rSe0PjWBeR4/0.jpg)](https://youtu.be/rSe0PjWBeR4?t=0s)
+
 > OIDC Sample : <https://medium.com/@nitesh_17214/oauth-2-0-authorization-server-using-nodejs-and-expressjs-cf65860fed1e>  
 > Code Sample : <https://medium.com/@nitesh_17214/how-to-create-oidc-client-in-nodejs-b8ea779e0c64>  
 > Vault OIDC Provider : <https://developer.hashicorp.com/vault/docs/secrets/identity/oidc-provider>
