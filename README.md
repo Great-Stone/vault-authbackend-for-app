@@ -33,6 +33,8 @@ Vault's Auth Method connects various authentication systems as backends for auth
   - `oidc_client_id`, `oidc_client_secret`, and `oidc_config_issuer` are used to configure the OIDC Client in the application.
   - `test_user_password` and `test_user_username` for login test user.
 
+- `index.js` file will rendered
+
 ## 2. OIDC Client sample - NodeJS
 
 - Setup OIDC Client url, id, and secret
@@ -78,4 +80,16 @@ You can activate a specific Auth Method of Vault and check authentication throug
       return cb(null, user)
     }); 
   }));
+  ```
+
+  ## 4. Run NodeJS
+
+  ```bash
+  $ npm start
+
+  > vault-auth-backend-sample@1.0.0 start
+  > node index.js
+
+  Http Server Running on
+  http://127.0.0.1:8080
   ```
