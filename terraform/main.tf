@@ -106,22 +106,16 @@ data "vault_identity_oidc_openid_config" "test" {
   name = vault_identity_oidc_provider.test.name
 }
 
-output "oidc_client_id" {
-  value = vault_identity_oidc_client.test.client_id
+data "template_file" "main_js" {
+  template = "${file("${path.module}/tpl/index.js.tpl")}"
+  vars = {
+    oidc_client_id = vault_identity_oidc_client.test.client_id
+    oidc_client_secret = vault_identity_oidc_client.test.client_secret
+    oidc_config_issuer = data.vault_identity_oidc_openid_config.test.issuer
+  }
 }
 
-output "oidc_client_secret" {
-  value = nonsensitive(vault_identity_oidc_client.test.client_secret)
-}
-
-output "oidc_config_issuer" {
-  value = data.vault_identity_oidc_openid_config.test.issuer
-}
-
-output "test_user_username" {
-  value = local.username
-}
-
-output "test_user_password" {
-  value = local.password
+resource "local_file" "main_js" {
+  content = data.template_file.main_js.rendered
+  filename = "${path.module}/../index.js"
 }
